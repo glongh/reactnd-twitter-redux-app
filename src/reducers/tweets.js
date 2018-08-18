@@ -22,12 +22,12 @@ export default function users(state = {}, action) {
 
             let replyingTo = {}
             if (tweet.replyingTo !== null) {
-              replyingTo = {
-                [tweet.replyingTo]: {
-                  ...state[tweet.replyingTo],
-                  replies: state[tweet.replyTo].replies.concat([tweet.id])
+                replyingTo = {
+                    [tweet.replyingTo]: {
+                        ...state[tweet.replyingTo],
+                        replies: state[tweet.replyingTo].replies.concat([tweet.id])
+                    }
                 }
-              }
             }
 
             return {
